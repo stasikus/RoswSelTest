@@ -8,3 +8,12 @@ c:\users\stas\documents\visual studio 2012\Projects\RoswSelTest\RoswSelTest\bin\
 c:\users\stas\documents\visual studio 2012\Projects\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.csprojResolveAssemblyReference.cache
 c:\users\stas\documents\visual studio 2012\Projects\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.exe
 c:\users\stas\documents\visual studio 2012\Projects\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\RoswSelTest.exe.config
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\RoswSelTest.exe
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\RoswSelTest.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.Support.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.xml
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.Support.xml
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.exe
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.pdb

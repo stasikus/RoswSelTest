@@ -9,3 +9,16 @@ C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Deb
 C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\obj\Debug\UnitTest.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\nunit.framework.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\RoswSelTest.exe
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\WebDriver.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\WebDriver.Support.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\RoswSelTest.pdb
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\nunit.framework.xml
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\WebDriver.xml
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\WebDriver.Support.xml
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\obj\Debug\UnitTest.pdb

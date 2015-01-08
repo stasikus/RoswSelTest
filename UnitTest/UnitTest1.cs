@@ -5,45 +5,45 @@ using RoswSelTest.Actions;
 using System.Xml;
 using System.Xml.Linq;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 
 namespace UnitTest
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    public class UnitTest1 : BaseTest
     {
+        //public void Initialize()
+        //{
+        //    Driver.Initialize();
+        //    DriverWait.Initialize(5);
+        //    Driver.BrowserMaximize();
+        //}
         
-        [TestMethod]
+        [Test]
         public void Login()
         {
-            Driver.Initialize();
-            DriverWait.Initialize(5);
-            Driver.BrowserMaximize();
-
             LoginAction.GoTo("http://roswar.ru");
 
             XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(@"D:\1\users.xml");
+            xDoc.Load(@"F:\users.xml");
 
             string name = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("Name").FirstChild.Value;
             string email = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("email").FirstChild.Value;
             string pass = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("pass").FirstChild.Value;
-
-            //XmlNodeList xmlList = xDoc.GetElementsByTagName("User");
-            //string s = xmlList.Count.ToString();
-
+            
             LoginAction.EnterCredentials(email, pass);
 
             string returnName = LoginAction.CheckName();
 
             if (returnName.Equals(name))
-                Assert.IsTrue(true);
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(true);
             else
-                Assert.IsTrue(false);
+               Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(false);
 
         }
 
-        [TestMethod]
+        [Test]
         public void Logout()
         {
             RoswSelTest.Actions.Logout.LogoutFromUser();

@@ -35,11 +35,11 @@ namespace RoswSelTest
         {
             string retName = null;
 
-            //retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a[2]"),10).ToString();
+            Driver.Instance.SwitchTo().DefaultContent();
+            Driver.Instance.SwitchTo().Frame("game-frame");
 
-            retName = Driver.Instance.Title;
-
-
+            retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a")).Text.ToString();
+            
             return retName;
         }
     }
