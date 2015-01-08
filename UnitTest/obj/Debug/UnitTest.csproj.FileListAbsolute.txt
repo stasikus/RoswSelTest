@@ -1,0 +1,11 @@
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\UnitTest.dll
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\UnitTest.pdb
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\RoswSelTest.exe
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\WebDriver.dll
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\WebDriver.Support.dll
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\RoswSelTest.pdb
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\WebDriver.xml
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\bin\Debug\WebDriver.Support.xml
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\obj\Debug\UnitTest.dll
+C:\Users\stas\documents\visual studio 2012\Projects\RoswSelTest\UnitTest\obj\Debug\UnitTest.pdb
