@@ -42,5 +42,16 @@ namespace RoswSelTest
             
             return retName;
         }
+
+        public static int CheckBange()
+        {
+            int retBandage;
+
+            var retBandageVar = Driver.Instance.FindElementAndWait(By.XPath("//table[@class='inventary']//td[@class='equipment-cell']//dd[@htab='htabs']//div[@class='padding']//img[@src='/@/images/obj/badge.png']/../div[@class='count']")).Text.ToString();
+
+            retBandage = Convert.ToInt32(retBandageVar.Remove(0,1));
+
+            return retBandage;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RoswSelTest;
 using RoswSelTest.Actions;
+//using RoswSelTest.
 using System.Xml;
 using System.Xml.Linq;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace UnitTest
 
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(@"F:\users.xml");
+            //xDoc.Load(@"D:\1\users.xml");
 
             string name = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("Name").FirstChild.Value;
             string email = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("email").FirstChild.Value;
@@ -39,11 +41,17 @@ namespace UnitTest
             if (returnName.Equals(name))
                 Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(true);
             else
-               Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(false);
+                Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(false, "Failed on Login action");
+
+            int countBandage = LoginAction.CheckBange();
+
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(Attack.enterToMetro, "The user is not in metro"); //go to metro
+             
+
 
         }
 
-        [Test]
+       // [Test]
         public void Logout()
         {
             RoswSelTest.Actions.Logout.LogoutFromUser();
