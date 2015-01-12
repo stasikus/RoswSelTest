@@ -14,6 +14,8 @@ namespace RoswSelTest
         IWebElement FindElementAndWait(By by);
         //Can specify WebDriverWait timeout
         IWebElement FindElementAndWait(By by, int seconds);
+
+        IWebElement IsElementPresent(By by);
     }
 
     public class FirefoxDriverExt : FirefoxDriver, IWebDriverExt
@@ -35,20 +37,20 @@ namespace RoswSelTest
             return element;
         }
 
-        public bool IsElementPresent(By by, int seconds)
+        public IWebElement IsElementPresent(By by)
         {
-            DriverWait.Instance.Timeout = TimeSpan.FromSeconds(seconds);
-
-            var element = DriverWait.Instance.Until<IWebElement>(d =>
+            try
             {
                 var elements = Driver.Instance.FindElements(by);
                 if (elements.Count > 0)
                     return elements[0];
                 else
                     return null;
-            });
-
-            return element != null;
+            }
+            catch (NoSuchElementException)
+            {
+                return null;
+            }
         }
 
         //Can specify WebDriverWait timeout

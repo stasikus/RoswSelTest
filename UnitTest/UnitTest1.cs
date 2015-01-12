@@ -45,10 +45,23 @@ namespace UnitTest
 
             int countBandage = LoginAction.CheckBange();
 
+            Attack.GoToSquare(); //go to square
+
             Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(Attack.enterToMetro, "The user is not in metro"); //go to metro
-             
+
+            Attack.ratsAttackBigButton(); //first big button for searching the rats
+            bool attack = Attack.ratsAttackButton(); //attack the rat
+            bool skipTime;
+            if (!attack) //check if attack button are exis
+            {
+                skipTime = Attack.ratsTimeSkipButton(); //use bange for skip the timer
+                attack = Attack.ratsAttackButton(); //attack the rat after skiped timer
+            }
+
+            Attack.GoToSquare();
 
 
+            string metro = "";
         }
 
        // [Test]
