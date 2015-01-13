@@ -22,3 +22,16 @@ C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\bin\Debug\WebDrive
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\obj\Debug\UnitTest.dll
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\UnitTest\obj\Debug\UnitTest.pdb
+D:\Git\RoswSelTest\UnitTest\bin\Debug\UnitTest.dll
+D:\Git\RoswSelTest\UnitTest\bin\Debug\UnitTest.pdb
+D:\Git\RoswSelTest\UnitTest\bin\Debug\nunit.framework.dll
+D:\Git\RoswSelTest\UnitTest\bin\Debug\RoswSelTest.exe
+D:\Git\RoswSelTest\UnitTest\bin\Debug\WebDriver.dll
+D:\Git\RoswSelTest\UnitTest\bin\Debug\WebDriver.Support.dll
+D:\Git\RoswSelTest\UnitTest\bin\Debug\RoswSelTest.pdb
+D:\Git\RoswSelTest\UnitTest\bin\Debug\nunit.framework.xml
+D:\Git\RoswSelTest\UnitTest\bin\Debug\WebDriver.xml
+D:\Git\RoswSelTest\UnitTest\bin\Debug\WebDriver.Support.xml
+D:\Git\RoswSelTest\UnitTest\obj\Debug\UnitTest.csprojResolveAssemblyReference.cache
+D:\Git\RoswSelTest\UnitTest\obj\Debug\UnitTest.dll
+D:\Git\RoswSelTest\UnitTest\obj\Debug\UnitTest.pdb

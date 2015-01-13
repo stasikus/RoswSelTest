@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RoswSelTest.Actions
 {
-    public class Attack
+    public class Actions
     {
         public static bool enterToMetro
         {
@@ -24,9 +24,44 @@ namespace RoswSelTest.Actions
             }
         }
 
-        public static void GoToSquare()
+        public static int metroLvl
+        {
+            get
+            {
+                int metrolvl = -1;
+            
+                string timerLvl = Driver.Instance.IsElementPresent(By.XPath("//table[@class='process']//tr[1]//td[1]")).Text.ToString();
+                string waitLvl = Driver.Instance.IsElementPresent(By.XPath("//div[@class='holders']")).Text.ToString();
+
+                if (timerLvl != "")
+                {
+                    string[] lvlm = timerLvl.Split(' ');
+                    metrolvl = Convert.ToInt32(lvlm[2]);
+                }
+                else
+                {
+                    metrolvl = Convert.ToInt32(waitLvl.Remove(0, waitLvl.IndexOf(": ") + 2).Remove(2));
+                }
+                return metrolvl;
+            }
+        }
+
+        public static void goToSquare()
         {
             Driver.Instance.FindElement(By.XPath("//div[@class='header clear ']//a[@class='square']")).Click();
+        }
+
+        public static void checkHP()
+        {
+            string currentHP = Driver.Instance.FindElementAndWait(By.XPath("//div[@class='life']//span[@id='currenthp']")).Text.ToString(); // currenthp
+            string maxhp = Driver.Instance.FindElementAndWait(By.XPath("//div[@class='life']//span[@id='maxhp']")).Text.ToString(); // maxhp
+
+            double diff = Convert.ToDouble(currentHP) * 100.0 / Convert.ToDouble(maxhp);
+
+            if (diff < 80.0)
+            {
+                Driver.Instance.FindElement(By.XPath("//div[@class='life']//div[@class='bar']//i")).Click();
+            }
         }
 
         public static void ratsAttackBigButton()
@@ -53,9 +88,9 @@ namespace RoswSelTest.Actions
 
                 return flag;
             }
-
             return false;
         }
+
 
         public static bool ratsTimeSkipButton()
         {

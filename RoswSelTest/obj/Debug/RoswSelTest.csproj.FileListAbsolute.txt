@@ -18,3 +18,13 @@ C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\bin\Debug\WebDr
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.exe
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.pdb
 C:\Users\s.o.kravchenko\Documents\GitHub\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.csprojResolveAssemblyReference.cache
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\RoswSelTest.exe.config
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\RoswSelTest.exe
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\RoswSelTest.pdb
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.dll
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.Support.dll
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.xml
+D:\Git\RoswSelTest\RoswSelTest\bin\Debug\WebDriver.Support.xml
+D:\Git\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.csprojResolveAssemblyReference.cache
+D:\Git\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.exe
+D:\Git\RoswSelTest\RoswSelTest\obj\Debug\RoswSelTest.pdb

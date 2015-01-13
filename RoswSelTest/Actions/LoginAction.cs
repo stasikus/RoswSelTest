@@ -35,22 +35,21 @@ namespace RoswSelTest
         {
             string retName = null;
 
-            Driver.Instance.SwitchTo().DefaultContent();
-            Driver.Instance.SwitchTo().Frame("game-frame");
+            //Driver.Instance.SwitchTo().DefaultContent();
+            //Driver.Instance.SwitchTo().Frame("game-frame");
 
-            retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a")).Text.ToString();
-            
+            retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a[2]")).Text.ToString();
+            //retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a")).Text.ToString();
+            //a[@href='player']
+
             return retName;
         }
 
         public static int CheckBange()
         {
             int retBandage;
-
             var retBandageVar = Driver.Instance.FindElementAndWait(By.XPath("//table[@class='inventary']//td[@class='equipment-cell']//dd[@htab='htabs']//div[@class='padding']//img[@src='/@/images/obj/badge.png']/../div[@class='count']")).Text.ToString();
-
             retBandage = Convert.ToInt32(retBandageVar.Remove(0,1));
-
             return retBandage;
         }
     }

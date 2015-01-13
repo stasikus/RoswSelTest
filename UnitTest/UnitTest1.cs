@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RoswSelTest;
 using RoswSelTest.Actions;
-//using RoswSelTest.
 using System.Xml;
 using System.Xml.Linq;
 using System.Collections.Generic;
@@ -27,12 +26,13 @@ namespace UnitTest
             LoginAction.GoTo("http://roswar.ru");
 
             XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(@"F:\users.xml");
-            //xDoc.Load(@"D:\1\users.xml");
+            //xDoc.Load(@"F:\users.xml");
+            xDoc.Load(@"D:\1\users.xml");
 
-            string name = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("Name").FirstChild.Value;
-            string email = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("email").FirstChild.Value;
-            string pass = xDoc.DocumentElement.GetElementsByTagName("User").Item(0).SelectSingleNode("pass").FirstChild.Value;
+            string name = xDoc.DocumentElement.GetElementsByTagName("User").Item(2).SelectSingleNode("Name").FirstChild.Value;
+            string email = xDoc.DocumentElement.GetElementsByTagName("User").Item(2).SelectSingleNode("email").FirstChild.Value;
+            string pass = xDoc.DocumentElement.GetElementsByTagName("User").Item(2).SelectSingleNode("pass").FirstChild.Value;
+            string max_level = xDoc.DocumentElement.GetElementsByTagName("User").Item(2).SelectSingleNode("max_level").FirstChild.Value;
             
             LoginAction.EnterCredentials(email, pass);
 
@@ -44,22 +44,34 @@ namespace UnitTest
                 Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(false, "Failed on Login action");
 
             int countBandage = LoginAction.CheckBange();
-
-            Attack.GoToSquare(); //go to square
-
-            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(Attack.enterToMetro, "The user is not in metro"); //go to metro
-
-            Attack.ratsAttackBigButton(); //first big button for searching the rats
-            bool attack = Attack.ratsAttackButton(); //attack the rat
-            bool skipTime;
-            if (!attack) //check if attack button are exis
+            Actions.goToSquare(); //go to square
+            Microsoft.VisualStudio.TestTools.UnitTesting.Assert.IsTrue(Actions.enterToMetro, "The user is not in metro"); //go to metro
+            
+            while (Convert.ToInt32(max_level) > Actions.metroLvl)
             {
-                skipTime = Attack.ratsTimeSkipButton(); //use bange for skip the timer
-                attack = Attack.ratsAttackButton(); //attack the rat after skiped timer
+                bool attack;
+                bool skipTime;
+
+                Actions.checkHP(); //check HP and healing if it needs
+                Actions.ratsAttackBigButton(); //first big button for searching the rats
+
+                if (Actions.metroLvl % 5 == 0)
+                    break;//attack = Actions.ratsAttackButton(); //attack the group of rats
+                else
+                    attack = Actions.ratsAttackButton(); //attack the rat
+
+                if (!attack) //check if attack button are exis
+                {
+                    skipTime = Actions.ratsTimeSkipButton(); //use bange for skip the timer
+
+                    if (Actions.metroLvl % 5 == 0) //attack the rat after skiped timer
+                        break;//attack = Actions.ratsAttackButton(); //attack the group of rats
+                    else
+                        attack = Actions.ratsAttackButton(); //attack the rat
+                }
             }
 
-            Attack.GoToSquare();
-
+            //Attack.GoToSquare();
 
             string metro = "";
         }
