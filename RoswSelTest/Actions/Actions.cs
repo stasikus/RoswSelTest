@@ -9,19 +9,16 @@ namespace RoswSelTest.Actions
 {
     public class Actions
     {
-        public static bool enterToMetro
+        public static bool enterToMetro()
         {
-            get
-            {
-                Driver.Instance.FindElementAndWait(By.XPath("//div[@class='welcome']//a[5]//i")).Click();
-                var startPage = Driver.Instance.FindElementAndWait(By.XPath("//div[@class='block-bordered metro-rats']//h3"));
-                var inSearching = Driver.Instance.IsElementPresent(By.XPath("//div[@id='welcome-rat']//p[2]//button[2]//span//div"));
+            Driver.Instance.FindElementAndWait(By.XPath("//div[@class='welcome']//a[5]//i")).Click();
+            var startPage = Driver.Instance.FindElementAndWait(By.XPath("//div[@class='block-bordered metro-rats']//h3"));
+            var inSearching = Driver.Instance.IsElementPresent(By.XPath("//div[@id='welcome-rat']//p[2]//button[2]//span//div"));
 
-                if (startPage.Text == "Охота на крысомах" || inSearching.Text == "Мужественно убежать")
-                    return true;
-                else
-                    return false;
-            }
+            if (startPage.Text == "Охота на крысомах" || inSearching.Text == "Мужественно убежать")
+                return true;
+            else
+                return false;
         }
 
         public static int metroLvl
@@ -29,26 +26,32 @@ namespace RoswSelTest.Actions
             get
             {
                 int metrolvl = -1;
-            
-                string timerLvl = Driver.Instance.IsElementPresent(By.XPath("//table[@class='process']//tr[1]//td[1]")).Text.ToString();
-                string waitLvl = Driver.Instance.IsElementPresent(By.XPath("//div[@class='holders']")).Text.ToString();
 
-                if (timerLvl != "")
+                IWebElement timerLvl = Driver.Instance.IsElementPresent(By.XPath("//table[@class='process']//tr[1]//td[1]"));
+                IWebElement waitLvl = Driver.Instance.IsElementPresent(By.XPath("//div[@class='holders']"));
+
+                if (timerLvl != null || waitLvl != null)
                 {
-                    string[] lvlm = timerLvl.Split(' ');
-                    metrolvl = Convert.ToInt32(lvlm[2]);
+                    if (timerLvl.Text != "")
+                    {
+                        string s = timerLvl.Text.ToString();
+                        string[] lvlm = s.Split(' ');
+                        metrolvl = Convert.ToInt32(lvlm[2]);
+                    }
+                    else
+                    {
+                        string s = waitLvl.Text.ToString();
+                        metrolvl = Convert.ToInt32(s.Remove(0, s.IndexOf(": ") + 2).Remove(2));
+                    }
                 }
-                else
-                {
-                    metrolvl = Convert.ToInt32(waitLvl.Remove(0, waitLvl.IndexOf(": ") + 2).Remove(2));
-                }
+
                 return metrolvl;
             }
         }
 
         public static void goToSquare()
         {
-            Driver.Instance.FindElement(By.XPath("//div[@class='header clear ']//a[@class='square']")).Click();
+            Driver.Instance.FindElementAndWait(By.XPath("//div[@class='header clear ']//a[@class='square']")).Click();
         }
 
         public static void checkHP()
@@ -58,9 +61,9 @@ namespace RoswSelTest.Actions
 
             double diff = Convert.ToDouble(currentHP) * 100.0 / Convert.ToDouble(maxhp);
 
-            if (diff < 80.0)
+            if (diff < 75.0)
             {
-                Driver.Instance.FindElement(By.XPath("//div[@class='life']//div[@class='bar']//i")).Click();
+                Driver.Instance.FindElementAndWait(By.XPath("//div[@class='life']//div[@class='bar']//i")).Click();
             }
         }
 

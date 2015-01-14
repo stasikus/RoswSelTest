@@ -16,7 +16,7 @@ namespace UnitTest
         {
             Driver.Initialize();
             DriverWait.Initialize(2);
-            //Driver.BrowserMaximize();
+            Driver.BrowserMaximize();
         }
 
         [TestFixtureTearDown]

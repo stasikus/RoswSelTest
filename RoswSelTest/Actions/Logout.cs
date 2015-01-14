@@ -19,8 +19,6 @@ namespace RoswSelTest.Actions
             Driver.Instance.SwitchTo().DefaultContent();
             Driver.Instance.SwitchTo().Frame("game-frame");
             
-            var stackTrace = new StackTrace();
-
             Driver.Instance.FindElementAndWait(By.XPath("//div[@id='main']/div[1]/div//span[@class='links-more']")).Click();
             Driver.Instance.FindElementAndWait(By.XPath("//span[@class='links-more']//li[@class='dropdown']//div[2]/a")).Click();
         }

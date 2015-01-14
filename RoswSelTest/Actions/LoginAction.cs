@@ -16,7 +16,7 @@ namespace RoswSelTest
 
         public static void EnterCredentials(string email, string password)
         {
-            var loadForm = Driver.Instance.FindElementAndWait(By.XPath("//*[@class='auth']"), 1);
+            var loadForm = Driver.Instance.FindElementAndWait(By.XPath("//*[@class='auth']"), 5);
             if (loadForm != null)
             {
                 var loginVal = Driver.Instance.FindElement(By.Id("email-input"));
@@ -27,7 +27,7 @@ namespace RoswSelTest
                 passVal.Clear();
                 passVal.SendKeys(password);
 
-                Driver.Instance.FindElement(By.XPath("//td[@class='td-login']/button")).Click();
+                Driver.Instance.FindElementAndWait(By.XPath("//td[@class='td-login']/button")).Click();
             }
         }
 
@@ -35,10 +35,10 @@ namespace RoswSelTest
         {
             string retName = null;
 
-            //Driver.Instance.SwitchTo().DefaultContent();
-            //Driver.Instance.SwitchTo().Frame("game-frame");
+            Driver.Instance.SwitchTo().DefaultContent();
+            Driver.Instance.SwitchTo().Frame("game-frame");
 
-            retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a[2]")).Text.ToString();
+            retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a[contains(@href, 'player')]")).Text.ToString();
             //retName = Driver.Instance.FindElementAndWait(By.XPath("//div[@id='content']/h3/span/a")).Text.ToString();
             //a[@href='player']
 
