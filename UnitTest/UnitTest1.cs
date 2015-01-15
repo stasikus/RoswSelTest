@@ -23,21 +23,21 @@ namespace UnitTest
         [Test]
         public void Login()
         {
-            LoginAction.GoTo("http://roswar.ru");
-
             XmlDocument xDoc = new XmlDocument();
-            //xDoc.Load(@"F:\users.xml");
+            xDoc.Load(@"F:\users.xml");
             //xDoc.Load(@"D:\1\users.xml");
-            xDoc.Load(@"D:\1\test.xml");
+            //xDoc.Load(@"D:\1\test.xml");
 
             int userCounter = xDoc.DocumentElement.GetElementsByTagName("User").Count;
 
-            for (int i = 0; i < userCounter; i++) //make the action for every user
-            {
-                string name = xDoc.DocumentElement.GetElementsByTagName("User").Item(i).SelectSingleNode("Name").FirstChild.Value;
-                string email = xDoc.DocumentElement.GetElementsByTagName("User").Item(i).SelectSingleNode("email").FirstChild.Value;
-                string pass = xDoc.DocumentElement.GetElementsByTagName("User").Item(i).SelectSingleNode("pass").FirstChild.Value;
-                string max_level = xDoc.DocumentElement.GetElementsByTagName("User").Item(i).SelectSingleNode("max_level").FirstChild.Value;
+            //for (int i = 0; i < userCounter; i++) //make the action for every user
+           // {
+                LoginAction.GoTo("http://roswar.ru");
+                int user = 6;
+                string name = xDoc.DocumentElement.GetElementsByTagName("User").Item(user).SelectSingleNode("Name").FirstChild.Value;
+                string email = xDoc.DocumentElement.GetElementsByTagName("User").Item(user).SelectSingleNode("email").FirstChild.Value;
+                string pass = xDoc.DocumentElement.GetElementsByTagName("User").Item(user).SelectSingleNode("pass").FirstChild.Value;
+                string max_level = xDoc.DocumentElement.GetElementsByTagName("User").Item(user).SelectSingleNode("max_level").FirstChild.Value;
 
                 LoginAction.EnterCredentials(email, pass);
 
@@ -57,38 +57,44 @@ namespace UnitTest
 
                 while (Convert.ToInt32(max_level) > Actions.metroLvl)
                 {
-                    bool attack;
-                    bool skipTime;
-
-                    Actions.checkHP(); //check HP and healing if it needs
-                    Actions.ratsAttackBigButton(); //first big button for searching the rats
-
-                    if (Actions.metroLvl % 5 == 0)
-                        break;//attack = Actions.ratsAttackButton(); //attack the group of rats
-                    else
-                        attack = Actions.ratsAttackButton(); //attack the rat
-
-                    if (!attack) //check if attack button are exis
+                    if (countBandage / 15 > 1)
                     {
-                        skipTime = Actions.ratsTimeSkipButton(); //use bange for skip the timer
+                        bool attack;
+                        bool skipTime;
 
-                        if (Actions.metroLvl % 5 == 0) //attack the rat after skiped timer
+                        Actions.checkHP(); //check HP and healing if it needs
+                        Actions.ratsAttackBigButton(); //first big button for searching the rats
+
+                        if (Actions.metroLvl % 5 == 0)
                             break;//attack = Actions.ratsAttackButton(); //attack the group of rats
                         else
                             attack = Actions.ratsAttackButton(); //attack the rat
+
+                        if (!attack) //check if attack button are exis
+                        {
+                            skipTime = Actions.ratsTimeSkipButton(); //use bange for skip the timer
+
+                            if (Actions.metroLvl % 5 == 0) //attack the rat after skiped timer
+                                break;//attack = Actions.ratsAttackButton(); //attack the group of rats
+                            else
+                                attack = Actions.ratsAttackButton(); //attack the rat
+                        }
+
+                        Driver.Wait(2);
+                        Actions.goToSquare(); //back to square
+
+                        Driver.Wait(1);
+                        Actions.enterToMetro(); //go to metro
+                        countBandage -= 15;
                     }
-
-                    Driver.Wait(2);
-                    Actions.goToSquare(); //back to square
-
-                    Driver.Wait(1);
-                    Actions.enterToMetro(); //go to metro
+                    else
+                        break;
                 }
 
                 Driver.Wait(1);
                 Actions.goToSquare();
                 RoswSelTest.Actions.Logout.LogoutFromUser();
-            }
+           // }
             //string metro = "";
         }
 
