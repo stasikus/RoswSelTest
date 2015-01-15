@@ -41,10 +41,13 @@ namespace RoswSelTest.Actions
                     else
                     {
                         string s = waitLvl.Text.ToString();
-                        metrolvl = Convert.ToInt32(s.Remove(0, s.IndexOf(": ") + 2).Remove(2));
+                        if(s.Length < 30)
+                            metrolvl = Convert.ToInt32(s.Remove(0, s.IndexOf(": ") + 2)); //if timer is not exist
+                        else
+                            metrolvl = Convert.ToInt32(s.Remove(0, s.IndexOf(": ") + 2).Remove(2));
                     }
                 }
-
+                
                 return metrolvl;
             }
         }
